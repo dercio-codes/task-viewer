@@ -15,11 +15,10 @@ import { blue } from "@mui/material/colors";
 import { users } from "../data/users";
 import { UserContext, ThemeContext } from "../context/user-context";
 
-const emails = ["username@gmail.com", "user02@gmail.com"];
-
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
   const { user, setUser } = React.useContext(UserContext);
+  const userContext = React.useContext(UserContext)
   const { theme, setTheme } = React.useContext(ThemeContext);
 
   const handleClose = () => {
@@ -45,8 +44,7 @@ function SimpleDialog(props) {
           <ListItem
             button
             onClick={() => {
-              setUser(user);
-              console.log(user);
+              userContext.setUser(user)
               handleListItemClick(user.email);
             }}
             key={user.id}

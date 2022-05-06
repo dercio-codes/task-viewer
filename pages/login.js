@@ -80,7 +80,8 @@ const login = () => {
             />
             <TextField
               onChange={handleChange}
-              label="password"
+              label="Password"
+              type="password"
               name="password"
               value={form.passowrd}
               variant="standard"

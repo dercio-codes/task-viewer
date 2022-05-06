@@ -16,6 +16,7 @@ import { UserContext, ThemeContext } from "../context/user-context";
 const profile = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
   const { user, setUser } = React.useContext(UserContext);
+  const userContext = React.useContext(UserContext)
 
   
   // const [city, setCity] = React.useState(user.address.city);
@@ -30,14 +31,14 @@ const profile = () => {
     date: new Date().toDateString(),
   });
   
-  // console.log(userWeather);
   
+  let theUser = userContext.user 
+  console.log(theUser);
   async function FetchWeather(){
     const apiKey = "8cb9ca89adb9413e84bec37a165b0c9a";
-    fetch(`https://api.weatherbit.io/v2.0/current?city=${user.address.city}&key=${apiKey}`)
+    fetch(`https://api.weatherbit.io/v2.0/current?city=${theUser.address.city}&key=${apiKey}`)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
       let tempData = {
         icon: `https://www.weatherbit.io/static/img/icons/${data["data"][0]["weather"]["icon"]}.png`,
         description: `${data["data"][0]["weather"]["description"]}`,
