@@ -53,7 +53,7 @@ const Profile = () => {
 
   React.useEffect(() => {
     FetchWeather()
-  }, []);
+  }, [user , FetchWeather]);
 
   return (
     <Box
