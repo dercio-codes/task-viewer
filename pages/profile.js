@@ -13,7 +13,7 @@ import SetUserDialog from "../components/SetUserDialog";
 import ProfileDataTable from "../components/ProfileData";
 import { UserContext, ThemeContext } from "../context/user-context";
 
-const profile = () => {
+const Profile = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
   const { user, setUser } = React.useContext(UserContext);
   const userContext = React.useContext(UserContext)
@@ -53,7 +53,7 @@ const profile = () => {
 
   React.useEffect(() => {
     FetchWeather()
-  }, [user]);
+  }, []);
 
   return (
     <Box
@@ -162,4 +162,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;
