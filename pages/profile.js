@@ -64,7 +64,7 @@ const Profile = () => {
       }}
     >
       <Grid container spacing={4}>
-        <Grid item xs={9}>
+        <Grid item xs={12} lg={3}>
           <Paper
             elevation={5}
             sx={{
@@ -109,7 +109,7 @@ const Profile = () => {
             </Stack>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} lg={3}>
           <Paper
             elevation={5}
             sx={{
